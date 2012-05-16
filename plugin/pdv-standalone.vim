@@ -318,6 +318,13 @@ func! PhpDocFunc()
     if g:pdv_cfg_ReturnVal != ""
         call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn . " @return " . g:pdv_cfg_ReturnVal)
     endif
+	call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn)
+    if g:pdv_cfg_Author != ""
+        call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn . " @author " . g:pdv_cfg_Author)
+    endif
+    if g:pdv_cfg_Version != ""
+        call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn . " @version " . g:pdv_cfg_Version . " " . strftime("%Y/%m/%d"))
+    endif
 
     " Close the comment block.
     call add(l:comment_lines, l:indent . g:pdv_cfg_CommentTail)
