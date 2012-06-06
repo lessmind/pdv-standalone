@@ -320,10 +320,7 @@ func! PhpDocFunc()
     endif
 	call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn)
     if g:pdv_cfg_Author != ""
-        call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn . " @author " . g:pdv_cfg_Author)
-    endif
-    if g:pdv_cfg_Version != ""
-        call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn . " @version " . g:pdv_cfg_Version . " " . strftime("%Y/%m/%d"))
+        call add(l:comment_lines, l:indent . g:pdv_cfg_Commentn . " @author " . g:pdv_cfg_Author . " " . strftime("%Y/%m/%d"))
     endif
 
     " Close the comment block.
